@@ -41,6 +41,18 @@ class Turmas {
             return false;
         }
 
+        bool retirarAluno(string numeroAluno) {
+            for (int n = 0; n < 26; n++){
+                if (this->listaAlunos[n][0]!="") {
+                    this->listaAlunos[n][0] = "";
+                    this->listaAlunos[n][1] = "";
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
         void colocaNotaMedia(float notaX){
             this ->notaMedia = notaX;
         }
@@ -94,21 +106,22 @@ int main (){
 
     turma1P.nome = "Turma 1P 2023/24";
     turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
-    turma1P.inserirAluno("14581", "Lucas Soares");
+    turma1P.inserirAluno("14582", "Lucas Soares");
+    turma1P.inserirAluno("14583", "Lucas Soares");
+    turma1P.inserirAluno("14584", "Lucas Soares");
+    turma1P.inserirAluno("14585", "Lucas Soares");
+    turma1P.inserirAluno("14586", "Lucas Soares");
+    turma1P.inserirAluno("14587", "Lucas Soares");
+    turma1P.inserirAluno("14588", "Lucas Soares");
+    turma1P.inserirAluno("14589", "Lucas Soares");
+    turma1P.inserirAluno("14590", "Lucas Soares");
+    turma1P.inserirAluno("14591", "Lucas Soares");
+    turma1P.inserirAluno("14592", "Lucas Soares");
+    turma1P.inserirAluno("14593", "Lucas Soares");
 
     int decisao;
     string varAuxNome, varAuxNumero;
+    string numRetirar;
 
     do {
 
@@ -117,6 +130,7 @@ int main (){
         cout << "Numero dos alunos = 2\n";
         cout << "Nome dos alunos = 3\n";
         cout << "Inserir aluno = 4\n";
+        cout << "Remover aluno = 5\n";
         cout << "\nSAIR = 0\n";
         cin >> decisao;
 
@@ -134,8 +148,12 @@ int main (){
             cout << "Qual o numero do aluno? ";
             getline(cin, varAuxNome);
             turma1P.inserirAluno(varAuxNumero, varAuxNome);
+        } else if (decisao == 5) {
+            cout << "Insira o numero do aluno que quer retirar";
+            cin >> numRetirar;
+            turma1P.retirarAluno(numRetirar);
 
-        } else if (decisao == 0) {
+        }else if (decisao == 0) {
             return 0;
         }
 
